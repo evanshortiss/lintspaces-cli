@@ -1,6 +1,6 @@
 {
   "name": "lintspaces-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CLI for Lintspaces",
   "main": "index.js",
   "scripts": {
