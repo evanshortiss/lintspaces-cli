@@ -15,7 +15,7 @@ eshortiss@Evans-MacBook-Pro:~/lintspaces --help
     -V, --version           output the version number
     -n, --newline           Require newline at end of file.
     -l, --maxnewlines <n>   Specify max number of newlines between blocks.
-    -t, --trailingspaces    Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
+    -t, --trailingspaces    Tests for useless whitespaces (trailing whitespaces) at each line ending of all files.
     -d, --indentation <s>   Check indentation is "tabs" or "spaces".
     -s, --spaces <n>        Used in conjunction with -i to set number of spaces.
     -i, --ignores <items>   Comma separated list of ignores.
