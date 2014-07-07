@@ -54,7 +54,6 @@ program.version(version)
    ' file path for settings.', resolveEditorConfig)
   .parse(process.argv);
 
-
 // Setup validator with user options
 validator = new Validator({
   newline: program.newline,
@@ -68,7 +67,13 @@ validator = new Validator({
 
 
 // Get files from args to support **/* syntax. Probably not the best way...
-targetFiles = process.argv.filter(fs.existsSync);
+targetFiles = process.argv.filter(function (f) {
+  if (f === process.argv[1]) {
+    return false;
+  } else {
+    return fs.existsSync(f);
+  }
+});
 
 
 // Run validation
