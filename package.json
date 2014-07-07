@@ -1,0 +1,32 @@
+{
+  "name": "lintspaces-cli",
+  "version": "0.0.0",
+  "description": "CLI for Lintspaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "lintspaces": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evanshortiss/lintspaces-cli.git"
+  },
+  "keywords": [
+    "lintspaces",
+    "node-lintspaces",
+    "cli"
+  ],
+  "author": "Evan Shortiss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evanshortiss/lintspaces-cli/issues"
+  },
+  "homepage": "https://github.com/evanshortiss/lintspaces-cli",
+  "dependencies": {
+    "commander": "~2.2.0",
+    "lintspaces": "~0.1.4",
+    "colors": "~0.6.2"
+  }
+}
