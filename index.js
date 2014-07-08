@@ -47,11 +47,11 @@ program.version(version)
   .option('-t, --trailingspaces', 'Tests for useless whitespaces' +
     ' (trailing whitespaces) at each lineending of all files.')
   .option('-d, --indentation <s>', 'Check indentation is "tabs" or "spaces".')
-  .option('-s, --spaces <n>', 'Used in conjunction with -i to set number of ' +
+  .option('-s, --spaces <n>', 'Used in conjunction with -d to set number of ' +
     'spaces.', parseInt)
   .option('-i, --ignores <items>', 'Comma separated list of ignores.', list)
   .option('-e, --editorconfig <s>', 'Use editorconfig specified at this ' +
-   ' file path for settings.', resolveEditorConfig)
+   'file path for settings.', resolveEditorConfig)
   .parse(process.argv);
 
 // Setup validator with user options
