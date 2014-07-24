@@ -42,6 +42,12 @@ function resolveEditorConfig (e) {
 
 program.version(version)
   .option('-n, --newline', 'Require newline at end of file.')
+  .option('-g, --guessindentation', 'Tries to guess the indention of a line ' +
+    'depending on previous lines.')
+  .option('-b, --skiptrailingonblank', 'Skip blank lines in trailingspaces ' +
+    'check.')
+  .option('-it, --trailingspacestoignores', 'Ignore trailing spaces in ' +
+    'ignores.')
   .option('-l, --maxnewlines <n>', 'Specify max number of newlines between' +
     ' blocks.', parseInt)
   .option('-t, --trailingspaces', 'Tests for useless whitespaces' +
@@ -54,6 +60,7 @@ program.version(version)
    'file path for settings.', resolveEditorConfig)
   .parse(process.argv);
 
+
 // Setup validator with user options
 validator = new Validator({
   newline: program.newline,
@@ -62,7 +69,10 @@ validator = new Validator({
   indentation: program.indentation,
   spaces: program.spaces,
   ignores: program.ignores,
-  editorconfig: program.editorconfig
+  editorconfig: program.editorconfig,
+  indentationGuess: program.guessindentation,
+  trailingspacesSkipBlanks: program.skiptrailingonblank,
+  trailingspacesToIgnores: program.trailingspacesToIgnores
 });
 
 
@@ -85,10 +95,26 @@ files = validator.getInvalidFiles();
 
 // Output results
 for (var file in files) {
+  var curFile = files[file];
   console.warn(util.format('\nFile: %s', file).red.underline);
-  for (var line in files[file]) {
-    for(var err in files[file][line]) {
-      console.warn('Line: %s', line, files[file][line][err]);
+
+  for (var line in curFile) {
+    var curLine = curFile[line];
+
+    for(var err in curLine) {
+      var curErr = curLine[err]
+        , msg = ''
+        , errMsg = curErr.type;
+
+      if (errMsg.toLowerCase() === 'warning') {
+        errMsg = errMsg.red;
+      } else {
+        errMsg = errMsg.green;
+      }
+
+      msg = util.format('Line: %s %s [%s]', line, curErr.message, errMsg);
+
+      console.warn(msg);
     }
   }
 }
