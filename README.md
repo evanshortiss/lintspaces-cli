@@ -1,10 +1,10 @@
 lintspaces-cli
 ==============
 
-Simple as pie CLI for the node-lintspaces module. Supports all the usual 
+Simple as pie CLI for the node-lintspaces module. Supports all the usual
 lintspaces args that the Grunt, Gulp and vanilla Node.js module support.
 
-## Install 
+## Install
 ```
 $ npm install -g lintspaces-cli
 ```
@@ -14,7 +14,7 @@ $ npm install -g lintspaces-cli
 ```
 eshortiss@Evans-MacBook-Pro:~/lintspaces --help
 
-  Usage: index [options]
+  Usage: lintspaces [options]
 
   Options:
 
@@ -34,7 +34,7 @@ eshortiss@Evans-MacBook-Pro:~/lintspaces --help
 
 ## Example Commands
 
-Check all JavaScript files in directory for trailing spaces and newline at the 
+Check all JavaScript files in directory for trailing spaces and newline at the
 end of file:
 
 ```
