@@ -1,10 +1,10 @@
 lintspaces-cli
 ==============
 
-Simple as pie CLI for the node-lintspaces module. Supports all the usual 
+Simple as pie CLI for the node-lintspaces module. Supports all the usual
 lintspaces args that the Grunt, Gulp and vanilla Node.js module support.
 
-## Install 
+## Install
 ```
 $ npm install -g lintspaces-cli
 ```
@@ -18,20 +18,23 @@ eshortiss@Evans-MacBook-Pro:~/lintspaces --help
 
   Options:
 
-    -h, --help              output usage information
-    -V, --version           output the version number
-    -n, --newline           Require newline at end of file.
-    -l, --maxnewlines <n>   Specify max number of newlines between blocks.
-    -t, --trailingspaces    Tests for useless whitespaces (trailing whitespaces) at each line ending of all files.
-    -d, --indentation <s>   Check indentation is "tabs" or "spaces".
-    -s, --spaces <n>        Used in conjunction with -d to set number of spaces.
-    -i, --ignores <items>   Comma separated list of ignores.
-    -e, --editorconfig <s>  Use editorconfig specified at this  file path for settings.
+    -h, --help                      output usage information
+    -V, --version                   output the version number
+    -n, --newline                   Require newline at end of file.
+    -g, --guessindentation          Tries to guess the indention of a line depending on previous lines
+    -b, --skiptrailingonblank       Skip blank lines in trailingspaces check.
+    -it, --trailingspacestoignores  Ignore trailing spaces in ignores
+    -l, --maxnewlines <n>           Specify max number of newlines between blocks.
+    -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
+    -d, --indentation <s>           Check indentation is "tabs" or "spaces".
+    -s, --spaces <n>                Used in conjunction with -d to set number of spaces.
+    -i, --ignores <items>           Comma separated list of ignores.
+    -e, --editorconfig <s>          Use editorconfig specified at this file path for settings.
 ```
 
 ## Example Commands
 
-Check all JavaScript files in directory for trailing spaces and newline at the 
+Check all JavaScript files in directory for trailing spaces and newline at the
 end of file:
 
 ```

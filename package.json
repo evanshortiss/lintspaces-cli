@@ -1,6 +1,6 @@
 {
   "name": "lintspaces-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CLI for Lintspaces",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/evanshortiss/lintspaces-cli",
   "dependencies": {
     "commander": "~2.2.0",
-    "lintspaces": "~0.1.4",
+    "lintspaces": "~0.2.1",
     "colors": "~0.6.2"
   }
 }
