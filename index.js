@@ -77,7 +77,7 @@ validator = new Validator({
 
 
 // Get files from args to support **/* syntax. Probably not the best way...
-targetFiles = process.argv.filter(function (f) {
+targetFiles = process.argv.slice(1).filter(function (f) {
   if (f === process.argv[1]) {
     return false;
   } else {
