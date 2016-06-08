@@ -2,7 +2,7 @@ lintspaces-cli
 ==============
 
 Simple as pie CLI for the node-lintspaces module. Supports all the usual
-lintspaces args that the Grunt, Gulp and vanilla Node.js module support.
+lintspaces args that the Grunt, Gulp and vanilla node.js module support.
 
 ## Install
 ```
@@ -49,7 +49,10 @@ lintspaces -nt -s 2 -d spaces ./*.js
 
 ## Changelog
 
-* 0.1.1 - Support for Node.js <=4.0.0 (thank you @gurdiga)
+* 0.2.0 - Update to use lintspaces@0.5.0 and support new allowsBOM and
+endOfLine options.
+
+* 0.1.1 - Support for node.js v4+ (thank you @gurdiga)
 
 * 0.1.0 - Initial stable release
 

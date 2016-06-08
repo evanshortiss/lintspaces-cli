@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
+'use strict';
+
+// It's colours I tell ya. Colours!!!
+require('colors'); // Oh yeah, this enables adding colour code to strings
+
 var fs = require('fs')
   , util = require('util')
   , path = require('path')
-  , colors = require('colors') // It's colours I tell ya. Colours!!!
   , program = require('commander')
   , Validator = require('lintspaces')
   , version = require('./package.json').version
@@ -26,7 +30,7 @@ function list (l) {
  */
 function resolveEditorConfig (e) {
   if (e) {
-    e = path.resolve(e)
+    e = path.resolve(e);
 
     if (!fs.existsSync(e)) {
       console.log('Error: Specified .editorconfig "%s" doesn\'t exist'.red, e);
@@ -58,6 +62,8 @@ program.version(version)
   .option('-i, --ignores <items>', 'Comma separated list of ignores.', list)
   .option('-e, --editorconfig <s>', 'Use editorconfig specified at this ' +
    'file path for settings.', resolveEditorConfig)
+  .option('-o, --allowsBOM', 'Sets the allowsBOM option to true')
+  .option('--endOfLine <s>')
   .parse(process.argv);
 
 
@@ -72,7 +78,9 @@ validator = new Validator({
   editorconfig: program.editorconfig,
   indentationGuess: program.guessindentation,
   trailingspacesSkipBlanks: program.skiptrailingonblank,
-  trailingspacesToIgnores: program.trailingspacesToIgnores
+  trailingspacesToIgnores: program.trailingspacesToIgnores,
+  allowsBOM: program.allowsBOM,
+  endOfLine: program.endOfLine
 });
 
 
