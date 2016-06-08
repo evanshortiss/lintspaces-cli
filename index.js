@@ -6,6 +6,7 @@
 require('colors'); // Oh yeah, this enables adding colour code to strings
 
 var fs = require('fs')
+  , map = require('lodash.map')
   , util = require('util')
   , path = require('path')
   , program = require('commander')
@@ -17,12 +18,18 @@ var fs = require('fs')
 
 
 /**
- * Split comma separated list into array.
+ * Accumlate list items.
  * @param {String}
  */
-function list (l) {
-  return l.split(',');
+function list(list) {
+  list = list || [];
+
+  return function (entry) {
+    list.push(entry);
+    return list;
+  };
 }
+
 
 /**
  * Check does the provided editorconfig exist
@@ -59,13 +66,20 @@ program.version(version)
   .option('-d, --indentation <s>', 'Check indentation is "tabs" or "spaces".')
   .option('-s, --spaces <n>', 'Used in conjunction with -d to set number of ' +
     'spaces.', parseInt)
-  .option('-i, --ignores <items>', 'Comma separated list of ignores.', list)
+  .option('-i, --ignores <items>', 'Comma separated list of ignores built in ' +
+    'ignores.', list(), [])
+  .option('-r, --regexIgnores <items>', 'Comma separated list of ignores that' +
+    ' should be parsed as Regex', list(), [])
   .option('-e, --editorconfig <s>', 'Use editorconfig specified at this ' +
    'file path for settings.', resolveEditorConfig)
   .option('-o, --allowsBOM', 'Sets the allowsBOM option to true')
   .option('--endOfLine <s>')
   .parse(process.argv);
 
+// Map regexIgnores to RegExp objects
+program.regexIgnores = map(program.regexIgnores, function (r) {
+  return new RegExp(r);
+});
 
 // Setup validator with user options
 validator = new Validator({

@@ -47,7 +47,25 @@ Check that 2 spaces are used as indent:
 lintspaces -nt -s 2 -d spaces ./*.js
 ```
 
+## Using Ignores
+lintspaces supports ignores, and we added support for those in version 0.3.0 of
+this module.
+
+Using built in ignores can be done like so:
+
+```
+lintspaces -i 'js-comments' -i 'c-comments'
+```
+
+To add Regex ignores a different flag is required:
+
+```
+lintspaces -r '/pointless|regex/g' -r '/and|another/gi '
+```
+
 ## Changelog
+
+* 0.3.0 - Add support for Regex ignores by adding the *--regexIgnores* option.
 
 * 0.2.0 - Update to use lintspaces@0.5.0 and support new allowsBOM and
 endOfLine options.

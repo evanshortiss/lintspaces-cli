@@ -1,6 +1,6 @@
 {
   "name": "lintspaces-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CLI for the lintspaces module",
   "main": "index.js",
   "scripts": {
@@ -25,8 +25,9 @@
   },
   "homepage": "https://github.com/evanshortiss/lintspaces-cli",
   "dependencies": {
+    "colors": "~0.6.2",
     "commander": "~2.2.0",
     "lintspaces": "~0.5.0",
-    "colors": "~0.6.2"
+    "lodash.map": "^4.4.0"
   }
 }
