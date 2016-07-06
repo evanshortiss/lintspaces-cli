@@ -73,6 +73,7 @@ program.version(version)
   .option('-e, --editorconfig <s>', 'Use editorconfig specified at this ' +
    'file path for settings.', resolveEditorConfig)
   .option('-o, --allowsBOM', 'Sets the allowsBOM option to true')
+  .option('-v, --verbose', 'Be verbose when processing files')
   .option('--endOfLine <s>')
   .parse(process.argv);
 
@@ -94,6 +95,7 @@ validator = new Validator({
   trailingspacesSkipBlanks: program.skiptrailingonblank,
   trailingspacesToIgnores: program.trailingspacesToIgnores,
   allowsBOM: program.allowsBOM,
+  verbose: program.verbose,
   endOfLine: program.endOfLine
 });
 
@@ -103,8 +105,15 @@ targetFiles = process.argv.slice(2).filter(fs.existsSync.bind(fs));
 
 
 // Run validation
+if (program.verbose) {
+  console.info('Number of files to check: ' + targetFiles.length);
+}
 for (var file in targetFiles) {
-  validator.validate(path.resolve(targetFiles[file]));
+  var filepath = path.resolve(targetFiles[file]);
+  if (program.verbose) {
+    console.info('Checking: ' + filepath);
+  }
+  validator.validate(filepath);
 }
 files = validator.getInvalidFiles();
 

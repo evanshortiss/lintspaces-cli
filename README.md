@@ -28,8 +28,12 @@ eshortiss@Evans-MacBook-Pro:~/lintspaces --help
     -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
     -d, --indentation <s>           Check indentation is "tabs" or "spaces".
     -s, --spaces <n>                Used in conjunction with -d to set number of spaces.
-    -i, --ignores <items>           Comma separated list of ignores.
-    -e, --editorconfig <s>          Use editorconfig specified at this file path for settings.
+    -i, --ignores <items>           Comma separated list of ignores built in ignores
+    -r, --regexIgnores <items>      Comma separated list of ignores that should be parsed as Regex
+    -e, --editorconfig <s>          Use editorconfig specified at this file path for settings
+    -o, --allowsBOM                 Sets the allowsBOM option to true
+    -v, --verbose                   Be verbose when processing files
+    --endOfLine <s>
 ```
 
 ## Example Commands
