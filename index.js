@@ -52,26 +52,26 @@ function resolveEditorConfig (e) {
 
 
 program.version(version)
-  .option('-n, --newline', 'Require newline at end of file')
+  .option('-n, --newline', 'Require newline at end of file.')
   .option('-g, --guessindentation', 'Tries to guess the indention of a line ' +
-    'depending on previous lines')
+    'depending on previous lines.')
   .option('-b, --skiptrailingonblank', 'Skip blank lines in trailingspaces ' +
-    'check')
+    'check.')
   .option('-it, --trailingspacestoignores', 'Ignore trailing spaces in ' +
-    'ignores')
+    'ignores.')
   .option('-l, --maxnewlines <n>', 'Specify max number of newlines between' +
-    ' blocks', parseInt)
+    ' blocks.', parseInt)
   .option('-t, --trailingspaces', 'Tests for useless whitespaces' +
-    ' (trailing whitespaces) at each lineending of all files')
-  .option('-d, --indentation <s>', 'Check indentation is "tabs" or "spaces"')
+    ' (trailing whitespaces) at each lineending of all files.')
+  .option('-d, --indentation <s>', 'Check indentation is "tabs" or "spaces".')
   .option('-s, --spaces <n>', 'Used in conjunction with -d to set number of ' +
-    'spaces', parseInt)
+    'spaces.', parseInt)
   .option('-i, --ignores <items>', 'Comma separated list of ignores built in ' +
-    'ignores', list(), [])
+    'ignores.', list(), [])
   .option('-r, --regexIgnores <items>', 'Comma separated list of ignores that' +
     ' should be parsed as Regex', list(), [])
   .option('-e, --editorconfig <s>', 'Use editorconfig specified at this ' +
-   'file path for settings', resolveEditorConfig)
+   'file path for settings.', resolveEditorConfig)
   .option('-o, --allowsBOM', 'Sets the allowsBOM option to true')
   .option('-v, --verbose', 'Be verbose when processing files')
   .option('--endOfLine <s>')
@@ -106,12 +106,12 @@ targetFiles = process.argv.slice(2).filter(fs.existsSync.bind(fs));
 
 // Run validation
 if (program.verbose) {
-  console.info("Number of files to check: " + targetFiles.length);
+  console.info('Number of files to check: ' + targetFiles.length);
 }
 for (var file in targetFiles) {
   var filepath = path.resolve(targetFiles[file]);
   if (program.verbose) {
-    console.info("Checking: " + filepath);
+    console.info('Checking: ' + filepath);
   }
   validator.validate(filepath);
 }
