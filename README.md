@@ -21,16 +21,16 @@ eshortiss@Evans-MacBook-Pro:~/lintspaces --help
     -h, --help                      output usage information
     -V, --version                   output the version number
     -n, --newline                   Require newline at end of file.
-    -g, --guessindentation          Tries to guess the indention of a line depending on previous lines.
+    -g, --guessindentation          Tries to guess the indention of a line depending on previous lines
     -b, --skiptrailingonblank       Skip blank lines in trailingspaces check.
-    -it, --trailingspacestoignores  Ignore trailing spaces in ignores.
+    -it, --trailingspacestoignores  Ignore trailing spaces in ignores
     -l, --maxnewlines <n>           Specify max number of newlines between blocks.
     -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
     -d, --indentation <s>           Check indentation is "tabs" or "spaces".
     -s, --spaces <n>                Used in conjunction with -d to set number of spaces.
-    -i, --ignores <items>           Comma separated list of ignores built in ignores.
+    -i, --ignores <items>           Comma separated list of ignores built in ignores
     -r, --regexIgnores <items>      Comma separated list of ignores that should be parsed as Regex
-    -e, --editorconfig <s>          Use editorconfig specified at this file path for settings.
+    -e, --editorconfig <s>          Use editorconfig specified at this file path for settings
     -o, --allowsBOM                 Sets the allowsBOM option to true
     -v, --verbose                   Be verbose when processing files
     --endOfLine <s>
