@@ -10,6 +10,7 @@ var fs = require('fs')
   , util = require('util')
   , path = require('path')
   , program = require('commander')
+  , glob = require('glob')
   , Validator = require('lintspaces')
   , version = require('./package.json').version
   , validator = null
@@ -100,8 +101,12 @@ validator = new Validator({
 });
 
 
-// Get files from args to support **/* syntax. Probably not the best way...
-targetFiles = process.argv.slice(2).filter(fs.existsSync.bind(fs));
+// Resolve all glob patterns and merge them into one array
+targetFiles = Array.prototype.concat.apply([], program.args.map(function(file) {
+  return glob.sync(file);
+}));
+
+targetFiles = targetFiles.filter(fs.existsSync.bind(fs));
 
 
 // Run validation
