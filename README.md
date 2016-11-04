@@ -75,6 +75,8 @@ lintspaces -r '/pointless|regex/g' -r '/and|another/gi '
 
 ## Changelog
 
+* 0.5.0 - Add support for glob patterns (thanks @jantimon)
+
 * 0.4.0 - Add verbose option (thank you @gemal)
 
 * 0.3.0 - Add support for Regex ignores by adding the *--regexIgnores* option.
