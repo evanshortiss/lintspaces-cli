@@ -45,6 +45,12 @@ end of file:
 lintspaces -n -t ./*.js
 ```
 
+Check all js and css files
+
+```
+lintspaces -n -t src/**/*.js src/**/*.css
+```
+
 Check that 2 spaces are used as indent:
 
 ```
