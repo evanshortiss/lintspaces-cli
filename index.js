@@ -75,6 +75,7 @@ program.version(version)
    'file path for settings.', resolveEditorConfig)
   .option('-o, --allowsBOM', 'Sets the allowsBOM option to true')
   .option('-v, --verbose', 'Be verbose when processing files')
+  .option('-., --matchdotfiles', 'Match dotfiles')
   .option('--endOfLine <s>')
   .parse(process.argv);
 
@@ -103,10 +104,16 @@ validator = new Validator({
 
 // Resolve all glob patterns and merge them into one array
 targetFiles = Array.prototype.concat.apply([], program.args.map(function(file) {
-  return glob.sync(file);
+  return glob.sync(file, {
+    dot: program.matchdotfiles,
+  });
 }));
 
-targetFiles = targetFiles.filter(fs.existsSync.bind(fs));
+targetFiles = targetFiles
+  .filter(fs.existsSync.bind(fs))
+  .filter(function (path) {
+    return fs.statSync(path).isFile()
+  });
 
 
 // Run validation
