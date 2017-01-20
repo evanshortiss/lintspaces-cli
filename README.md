@@ -12,28 +12,29 @@ $ npm install -g lintspaces-cli
 
 ## Help Output
 ```
-eshortiss@Evans-MacBook-Pro:~/lintspaces --help
+$ lintspaces --help
 
-  Usage: lintspaces [options]
+Usage: lintspaces [options]
 
-  Options:
+Options:
 
-    -h, --help                      output usage information
-    -V, --version                   output the version number
-    -n, --newline                   Require newline at end of file.
-    -g, --guessindentation          Tries to guess the indention of a line depending on previous lines
-    -b, --skiptrailingonblank       Skip blank lines in trailingspaces check.
-    -it, --trailingspacestoignores  Ignore trailing spaces in ignores
-    -l, --maxnewlines <n>           Specify max number of newlines between blocks.
-    -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
-    -d, --indentation <s>           Check indentation is "tabs" or "spaces".
-    -s, --spaces <n>                Used in conjunction with -d to set number of spaces.
-    -i, --ignores <items>           Comma separated list of ignores built in ignores
-    -r, --regexIgnores <items>      Comma separated list of ignores that should be parsed as Regex
-    -e, --editorconfig <s>          Use editorconfig specified at this file path for settings
-    -o, --allowsBOM                 Sets the allowsBOM option to true
-    -v, --verbose                   Be verbose when processing files
-    --endOfLine <s>
+  -h, --help                      output usage information
+  -V, --version                   output the version number
+  -n, --newline                   Require newline at end of file.
+  -g, --guessindentation          Tries to guess the indention of a line depending on previous lines.
+  -b, --skiptrailingonblank       Skip blank lines in trailingspaces check.
+  -it, --trailingspacestoignores  Ignore trailing spaces in ignores.
+  -l, --maxnewlines <n>           Specify max number of newlines between blocks.
+  -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
+  -d, --indentation <s>           Check indentation is "tabs" or "spaces".
+  -s, --spaces <n>                Used in conjunction with -d to set number of spaces.
+  -i, --ignores <items>           Comma separated list of ignores built in ignores.
+  -r, --regexIgnores <items>      Comma separated list of ignores that should be parsed as Regex
+  -e, --editorconfig <s>          Use editorconfig specified at this file path for settings.
+  -o, --allowsBOM                 Sets the allowsBOM option to true
+  -v, --verbose                   Be verbose when processing files
+  -., --matchdotfiles             Match dotfiles
+  --endOfLine <s>        
 ```
 
 ## Example Commands
@@ -75,6 +76,8 @@ lintspaces -r '/pointless|regex/g' -r '/and|another/gi '
 
 ## Changelog
 
+* 0.6.0 - Added support for matching dotfiles (dzięki @jrencz)
+
 * 0.5.0 - Add support for glob patterns (thanks @jantimon)
 
 * 0.4.0 - Add verbose option (thank you @gemal)
@@ -91,5 +94,7 @@ endOfLine options.
 * < 0.1.0 - Dark ages...
 
 ## Contributors
-* [Vlad Gurdiga](https://github.com/gurdiga)
-* [Henrik Gemal](https://github.com/gemal)
+* [Vlad Gurdiga (@gurdiga)](https://github.com/gurdiga)
+* [Henrik Gemal (@gemal)](https://github.com/gemal)
+* [Jan Nicklas (@jantimon)](https://github.com/jantimon)
+* [Jarek Rencz (@jrencz)](https://github.com/jrencz)
