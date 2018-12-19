@@ -4,6 +4,8 @@
   "description": "CLI for the lintspaces module",
   "main": "index.js",
   "scripts": {
+    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
+    "coverage": "nyc mocha test/*.js && nyc report --reporter=lcov",
     "format": "prettier --no-semi --single-quote --write index.js",
     "test": "mocha test/*.test.js"
   },
@@ -41,8 +43,10 @@
     "lodash.map": "~4.6.0"
   },
   "devDependencies": {
+    "coveralls": "~3.0.2",
     "expect": "~23.6.0",
     "mocha": "~5.2.0",
+    "nyc": "~13.1.0",
     "prettier": "~1.15.3",
     "sinon": "~7.2.2"
   }
