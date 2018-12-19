@@ -1,6 +1,12 @@
 lintspaces-cli
 ==============
 
+[![Travis CI](https://travis-ci.org/evanshortiss/lintspaces-cli.svg?branch=master)](https://travis-ci.org/evanshortiss/lintspaces-cli)
+[![Coverage Status](https://coveralls.io/repos/github/evanshortiss/lintspaces-cli/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/lintspaces-cli?branch=master)
+[![npm version](https://badge.fury.io/js/lintspaces-cli.svg)](https://www.npmjs.com/package/lintspaces-cli)
+[![npm downloads](https://img.shields.io/npm/dm/lintspaces-cli.svg?style=flat)](https://www.npmjs.com/package/lintspaces-cli)
+
+
 Simple as pie CLI for the node-lintspaces module. Supports all the usual
 lintspaces args that the Grunt, Gulp and vanilla node.js module support.
 
@@ -17,24 +23,24 @@ $ lintspaces --help
 Usage: lintspaces [options]
 
 Options:
-
-  -h, --help                      output usage information
   -V, --version                   output the version number
   -n, --newline                   Require newline at end of file.
   -g, --guessindentation          Tries to guess the indention of a line depending on previous lines.
   -b, --skiptrailingonblank       Skip blank lines in trailingspaces check.
   -it, --trailingspacestoignores  Ignore trailing spaces in ignores.
   -l, --maxnewlines <n>           Specify max number of newlines between blocks.
-  -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each lineending of all files.
+  -t, --trailingspaces            Tests for useless whitespaces (trailing whitespaces) at each line ending of all files.
   -d, --indentation <s>           Check indentation is "tabs" or "spaces".
   -s, --spaces <n>                Used in conjunction with -d to set number of spaces.
-  -i, --ignores <items>           Comma separated list of ignores built in ignores.
-  -r, --regexIgnores <items>      Comma separated list of ignores that should be parsed as Regex
+  -i, --ignores <items>           Comma separated list of ignores built in ignores. (default: [])
+  -r, --regexignores <items>      Comma separated list of ignores that should be parsed as Regex (default: [])
   -e, --editorconfig <s>          Use editorconfig specified at this file path for settings.
   -o, --allowsBOM                 Sets the allowsBOM option to true
   -v, --verbose                   Be verbose when processing files
   -., --matchdotfiles             Match dotfiles
-  --endOfLine <s>        
+  --endofline <s>                 Enables EOL checks. Supports "LF" or "CRLF" or "CR" values
+  --json                          Output the raw JSON results from lintspaces
+  -h, --help                      output usage information
 ```
 
 ## Example Commands
@@ -75,6 +81,8 @@ lintspaces -r '/pointless|regex/g' -r '/and|another/gi '
 ```
 
 ## Changelog
+
+* 0.7.0 - Bump dependencies. Add `--json` output flag. Add tests. Normalise arguments to lowercase.
 
 * 0.6.0 - Added support for matching dotfiles (dzięki @jrencz)
 
