@@ -130,19 +130,23 @@ module.exports = function (process, console) {
     endOfLine: program.endOfLine
   })
 
+  if (!program.args || program.args.length === 0) {
+    console.warn('Please provide a list or glob pattern of files to lint.'.red)
+    process.exit(1)
+  }
+
   // Resolve all glob patterns and merge them into one array
+  targetFiles = program.args.map((file) => {
+    return glob.sync(file, {
+      dot: program.matchdotfiles
+    })
+  })
+
+  // Flatten into single array
   targetFiles = Array.prototype.concat.apply(
     [],
-    program.args.map(function(file) {
-      return glob.sync(file, {
-        dot: program.matchdotfiles
-      })
-    })
+    targetFiles
   )
-
-  targetFiles = targetFiles.filter(fs.existsSync.bind(fs)).filter(function(path) {
-    return fs.statSync(path).isFile()
-  })
 
   // Run validation
   if (program.verbose) {
