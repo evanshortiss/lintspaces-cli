@@ -15,7 +15,7 @@
     }
   },
   "bin": {
-    "lintspaces": "bin/index.js"
+    "lintspaces": "bin/lintspaces-cli.js"
   },
   "repository": {
     "type": "git",
