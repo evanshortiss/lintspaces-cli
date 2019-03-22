@@ -148,6 +148,10 @@ module.exports = function (process, console) {
     targetFiles
   )
 
+  targetFiles = targetFiles.filter(fs.existsSync.bind(fs)).filter(function(path) {
+    return fs.statSync(path).isFile()
+  })
+
   // Run validation
   if (program.verbose) {
     console.log('Number of files to check: ' + targetFiles.length)

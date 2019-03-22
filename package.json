@@ -1,6 +1,6 @@
 {
   "name": "lintspaces-cli",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "CLI for the lintspaces module",
   "main": "index.js",
   "scripts": {
@@ -44,9 +44,9 @@
   },
   "devDependencies": {
     "coveralls": "~3.0.2",
-    "expect": "~23.6.0",
+    "expect": "~24.5.0",
     "mocha": "~5.2.0",
-    "nyc": "~13.1.0",
+    "nyc": "~13.3.0",
     "prettier": "~1.15.3",
     "sinon": "~7.2.2"
   }

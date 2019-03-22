@@ -82,6 +82,8 @@ lintspaces -r '/pointless|regex/g' -r '/and|another/gi '
 
 ## Changelog
 
+* 0.7.1 - Fix "is not a file" errors
+
 * 0.7.0 - Bump dependencies. Add `--json` output flag. Add tests. Normalise arguments to lowercase.
 
 * 0.6.0 - Added support for matching dotfiles (dzięki @jrencz)
