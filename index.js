@@ -127,7 +127,7 @@ module.exports = function (process, console) {
     trailingspacesToIgnores: program.trailingspacesToIgnores,
     allowsBOM: program.allowsBOM,
     verbose: program.verbose,
-    endOfLine: program.endOfLine
+    endOfLine: program.endofline
   })
 
   if (!program.args || program.args.length === 0) {
