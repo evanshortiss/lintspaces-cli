@@ -98,8 +98,7 @@ module.exports = function (process, console) {
     .option(
       '-e, --editorconfig <s>',
       'Use editorconfig specified at this file path for settings.',
-      resolveEditorConfig,
-      '.editorconfig'
+      resolveEditorConfig
     )
     .option('-o, --allowsBOM', 'Sets the allowsBOM option to true')
     .option('-v, --verbose', 'Be verbose when processing files')
