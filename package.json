@@ -4,7 +4,6 @@
   "description": "CLI for the lintspaces module",
   "main": "index.js",
   "scripts": {
-    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls",
     "coverage": "nyc mocha test/*.js && nyc report --reporter=lcov",
     "format": "prettier --no-semi --single-quote --write index.js",
     "test": "mocha test/*.test.js"
