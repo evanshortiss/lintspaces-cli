@@ -1,6 +1,6 @@
-## 1.0.0 (15/11/24)
+## 1.0.0 (18/11/24)
 
-* Update to use `lintspaces` v0.11.0.
+* Update to use `lintspaces` v0.12.0.
 * Revert change from v0.8.0 that loaded a `.editorconfig` file from the current working directory by default (see #33)
 
 ## 0.8.0

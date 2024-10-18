@@ -1,5 +1,5 @@
 const cli = require('../index')
-const expect = require('expect')
+const { expect } = require('expect')
 const sinon = require('sinon')
 const path = require('path')
 

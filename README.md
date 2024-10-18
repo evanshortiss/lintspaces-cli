@@ -1,7 +1,6 @@
 lintspaces-cli
 ==============
 
-[![Travis CI](https://travis-ci.org/evanshortiss/lintspaces-cli.svg?branch=master)](https://travis-ci.org/evanshortiss/lintspaces-cli)
 [![Coverage Status](https://coveralls.io/repos/github/evanshortiss/lintspaces-cli/badge.svg?branch=master)](https://coveralls.io/github/evanshortiss/lintspaces-cli?branch=master)
 [![npm version](https://badge.fury.io/js/lintspaces-cli.svg)](https://www.npmjs.com/package/lintspaces-cli)
 [![npm downloads](https://img.shields.io/npm/dm/lintspaces-cli.svg?style=flat)](https://www.npmjs.com/package/lintspaces-cli)

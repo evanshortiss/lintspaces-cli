@@ -114,20 +114,22 @@ module.exports = function (process, console) {
 
 
   // Setup validator with user options
+  const opts = program.opts()
+
   validator = new Validator({
-    newline: program.newline,
-    newlineMaximum: program.maxnewlines,
-    trailingspaces: program.trailingspaces,
-    indentation: program.indentation,
-    spaces: program.spaces,
-    ignores: program.ignores,
-    editorconfig: program.editorconfig,
-    indentationGuess: program.guessindentation,
-    trailingspacesSkipBlanks: program.skiptrailingonblank,
-    trailingspacesToIgnores: program.trailingspacesToIgnores,
-    allowsBOM: program.allowsBOM,
-    verbose: program.verbose,
-    endOfLine: program.endofline
+    newline: opts.newline,
+    newlineMaximum: opts.maxnewlines,
+    trailingspaces: opts.trailingspaces,
+    indentation: opts.indentation,
+    spaces: opts.spaces,
+    ignores: opts.ignores,
+    editorconfig: opts.editorconfig,
+    indentationGuess: opts.guessindentation,
+    trailingspacesSkipBlanks: opts.skiptrailingonblank,
+    trailingspacesToIgnores: opts.trailingspacesToIgnores,
+    allowsBOM: opts.allowsBOM,
+    verbose: opts.verbose,
+    endOfLine: opts.endofline
   })
 
   if (!program.args || program.args.length === 0) {
@@ -166,7 +168,7 @@ module.exports = function (process, console) {
   files = validator.getInvalidFiles()
 
   // Output results
-  if (program.json) {
+  if (opts.json) {
     console.log(JSON.stringify(files))
   } else {
     for (let file in files) {
