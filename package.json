@@ -37,7 +37,7 @@
   "dependencies": {
     "colors": "~1.4.0",
     "commander": "~12.1.0",
-    "glob": "~11.1.0",
+    "glob": "~12.0.0",
     "lintspaces": "~0.12.0",
     "lodash.map": "~4.6.0"
   },
